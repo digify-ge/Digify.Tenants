@@ -39,5 +39,5 @@ jobs:
     - name: Build solution and generate NuGet package
       run: dotnet pack ./src/Digify.Tenants.sln -c Release -p:PackageVersion=$RELEASE_VERSION -o ${GITHUB_WORKSPACE}/out  
       
-    - name: Push Digify.Micro
+    - name: Push Digify.Tenants
       run: dotnet nuget push ${GITHUB_WORKSPACE}/out/Digify.Tenants.*.nupkg -k $NUGET_AUTH_TOKEN --skip-duplicate --no-symbols true
